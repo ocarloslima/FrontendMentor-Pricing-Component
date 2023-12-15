@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+:root {
+    --purple-gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --border: hsl(233, 19%, 81%);
+    --purple: hsl(237, 63%, 64%);
+}
+
+body {
+    background: url(./images/bg-top.svg) top right no-repeat, url(./images/bg-bottom.svg) bottom left no-repeat;
+    background-size: 150px;
+    background-color: #e7e7f7;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+}
+
+h1,
+li {
+    color: hsl(233, 13%, 49%);
+}
+
+p {
+    color: hsl(232, 13%, 33%);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#container {
+    height: 100%;
+}
+
+#pricing {
+    margin-bottom: 70px;
+}
+
+#pricing p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    color: hsl(233, 13%, 49%);
+}
+
+#cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.card {
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #FFF;
+    max-width: 500px;
+    width: 225px;
+}
+
+.purpleCard,
+.whiteCard button {
+    background-image: var(--purple-gradient);
+    color: #FFF;
+}
+
+.purpleCard li, .purpleCard p {
+    color: #FFF;
+}
+
+.card p:first-child {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+li {
+    font-weight: bold;
+    font-size: 0.7rem;
+    border-top: 1px solid var(--border);
+    padding: 10px;
+}
+
+ul li:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price span {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+}
+
+.purpleCard button {
+    color: var(--purple);
+}
+
+button:hover {
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+}
+
+button:active {
+    background-image: var(--purple-gradient);
+    border: 1px solid #FFF;
+    color: #FFF;
+}
+
+.purpleCard button:hover {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+}
+
+.purpleCard button:active {
+    color: var(--purple);
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+
+#switch {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    text-indent: -2000px;
+    width: 35px;
+    height: 20px;
+    background: var(--purple-gradient);
+    border-radius: 200px;
+    margin: 0 10px;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 2.4px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+input:checked+label:after {
+    right: calc(100% - 5px);
+    transform: translateX(85%);
+}
+
+label:hover {
+    background: hsl(237, 76%, 84%);
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        height: 100vh;
+        background-size: 400px;
+    }
+
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #cardContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .card {
+        width: 400px;
+        padding: 40px 30px;
+    }
+
+    .purpleCard {
+        padding: 60px 30px;
+    }
+
+    li {
+        padding: 20px;
+    }
+
+    button {
+        padding: 20px;
+    }
+
+    ul {
+        margin-bottom: 30px;
+    }
+}
